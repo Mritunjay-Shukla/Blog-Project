@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+
+{% block content %}
+        <div id="main">
+
+            {% for cat in category %}
+            <div class="category-buttons">
+                <a href="category/<str:category>"><button>{{cat.name}}</button></a>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="card-holder">
+
+         {% for post in posts %}
+
+            <div class="card">
+                <a class="card-link" href="blogs/{{post.slug}}">
+                    {% if post.image %}
+                       <img src="{{post.image.url}}" alt=""/>
+                    {% else %}
+                       <img src="https://edyoda.s3.amazonaws.com/media/blog-images/learn-artificial-intelligence.jpeg" alt=""/>
+                    {% endif %}
+                <div class="inner-div">
+                    <h3>{{post.title|safe}}</h3>
+                    <p class="author"> {{post.author|safe}} <span class ="date">{{post.date}}</span></p>
+                    <p class="para">{{post.content|safe|truncatewords:20}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
