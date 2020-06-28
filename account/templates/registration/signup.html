@@ -1,0 +1,46 @@
+{% extends "base.html"%}
+{% block body %}
+        <div id="form-data" style="margin-top: 30px;">
+        <form method="POST">
+          <i style="font-size:50px; color: white; margin-left: 40%;" class="fa fa-user" aria-hidden="true"></i>
+          <i class="fa fa-cog fa-spin" style="font-size:40px; color: white;"></i>
+          {% csrf_token %}
+          {{form.errors}}
+          <p>User Name</p>
+          <p>{{form.username}}</p>
+            <p>First Name</p>
+            {{form.first_name}}
+            <p>Last Name</p>
+            {{form.last_name}}
+            <p>Password</p>
+            {{form.password1}}
+            <p>Confirm Password</p>
+            {{form.password2}}
+            <p>Email</p>
+            {{form.email}}
+            
+      <input id="submit-button" type="submit" href="" value="Register" style="color: white; margin-top: 20px;"><br>
+        </form>
+        </div>
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
