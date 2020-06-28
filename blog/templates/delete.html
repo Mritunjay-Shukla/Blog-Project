@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block body %}
+
+<div style="margin: auto; width: 95%;">
+  <h2>Are you really want to delete the post???</h2>
+</div>
+<div style="width: 95%; margin: auto;">
+<form action="{{post.id}}" method="POST">
+    {% csrf_token %}
+    <a style="text-decoration: none; background-color: blue; color: white; padding: 8px; border-radius: 3px;" href="/userdetail">Cancel</a>
+    <input style="border: none; border-radius: 3px; background-color: red; color: white; padding: 9px;" type="submit" name = "Confirm">
+
+</form>
+</div>
+{% endblock %}

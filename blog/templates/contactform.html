@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{% block body %}
+{% csrf_token %}
+  <form method="POST">
+    {% csrf_token %}
+    <div style="margin: auto; background-color: #0447a0be; padding: 20px; width: 40%; box-shadow: 1px 4px 4px;">
+      <div style="text-align: center;">
+        <i style="font-size: 25px; color: white;" class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+        <i style="font-size:50px; color: white;" class="fa fa-user" aria-hidden="true"></i>
+      </div>
+      {{form.errors}}
+      {% for x in form %}
+    <p class="clab2">{{x.label}}</p>
+             <p>{{x}}</p>
+    {% endfor %}
+
+    <input type="submit" value="Send" style="margin-left: 70%; color: white; background-color: blue; border-radius: 4px; padding: 5px; border: none; width: 30%;">
+  </div>
+  </form>
+{% endblock %}

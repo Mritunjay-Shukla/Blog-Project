@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% block body %}
+{% csrf_token %}
+<div class="form-group">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div style="margin: auto; background-color: rgb(86, 199, 243); padding: 20px; width: 65%; box-shadow: 1px 4px 4px;">
+      <div style="text-align: center;">
+        <i class='fas fa-edit' style='font-size:48px;color:white'></i>
+      </div>
+      {{form.errors}}
+      {% for x in form %}
+      {{ form.media }}
+    <p>{{x.label}}</p>
+             <p>{{x}}</p>
+    {% endfor %} 
+
+    <input type="submit" value="Publish" style="margin-left: 70%; color: white; background-color: blue; border-radius: 4px; padding: 5px; border: none; width: 30%;">
+  </div>
+  </form>
+</div>
+{% endblock %}
